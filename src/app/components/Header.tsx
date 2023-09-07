@@ -70,12 +70,12 @@ useEffect(() => {
         <h2 className=" text-white z-10 font-bold text-3xl shadow-md ">
         {`"La calidad que corta a la competencia"`}
         </h2>
-        <button className="bg-[#5f9bce] p-4 font-semibold block m-auto rounded-xl cursor-pointer hover:bg-[#206caf]" >
+        <button className="bg-[#5f9bce] p-4 font-semibold block m-auto rounded-xl cursor-pointer hover:bg-[#206caf] transition ease-in-out delay-150 hover:scale-110 " >
               OBTENER PRESUPUESTO
             </button>
         </div>
       </div>
-      <div className={`${!scroll ? 'fixed top-0 w-full' : 'block'}  grid grid-cols-2 bg-slate-50 text-center text-3xl text-[#5f9bce]  py-4 duration-500 `}>
+      <div className={`${!scroll ? 'fixed top-0 w-full' : 'block'}  z-20 grid grid-cols-2 bg-slate-50 text-center text-3xl text-[#5f9bce]  py-4 duration-500 `}>
         <div className="flex items-center ">
           <button
             className="flex flex-col h-12 w-12   rounded justify-center items-center group hover:text-[gray]"
