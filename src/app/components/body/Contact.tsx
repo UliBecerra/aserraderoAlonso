@@ -73,8 +73,8 @@ export default function Contact() {
           <form onSubmit={handleSubmit(submit)} className="my-[10px] z-30  ">
             <input
               type="text"
-              name="name"
-              id="name"
+/*               name="name"
+ */              id="name"
               placeholder="Name"
               className="bg-[#ffffff4d] rounded-[10px] w-full p-2  placeholder-white my-[10px]"
               {...register("name", 
@@ -93,8 +93,8 @@ export default function Contact() {
           <p className="text-red-500 text-sm mt-1">{formState.errors.name.message}</p>
         ) : ''}            <input
               type="email"
-              name="email"
-              id="emial"
+/*               name="email"
+ */              id="emial"
               required
               placeholder="Email adresss "
               className="bg-[#ffffff4d] rounded-[10px] w-full p-2  placeholder-white my-[10px]"
@@ -118,8 +118,8 @@ export default function Contact() {
         ) : ''}
             <input
               type="text"
-              name="subject"
-              id="subject"
+/*               name="subject"
+ */              id="subject"
               placeholder="Subject"
               className="bg-[#ffffff4d] rounded-[10px] w-full p-2  placeholder-white m     my-[10px]"
               {...register("subject", 
@@ -137,8 +137,8 @@ export default function Contact() {
  {formState.errors.username ? (
           <p className="text-red-500 text-sm mt-1">{formState.errors.username.message}</p>
         ) : ''}            <textarea
-              name="description"
-              id="message"
+/*               name="description"
+ */              id="message"
               placeholder="Your message"
               className="bg-[#ffffff4d] rounded-[10px] w-full h-[150px] p-2  placeholder-white py-[10px] z-40"
               {...register("description", 
