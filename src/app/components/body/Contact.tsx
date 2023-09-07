@@ -73,8 +73,7 @@ export default function Contact() {
           <form onSubmit={handleSubmit(submit)} className="my-[10px] z-30  ">
             <input
               type="text"
-/*               name="name"
- */              id="name"
+              id="name"
               placeholder="Name"
               className="bg-[#ffffff4d] rounded-[10px] w-full p-2  placeholder-white my-[10px]"
               {...register("name", 
