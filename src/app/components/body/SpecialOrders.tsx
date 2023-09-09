@@ -7,7 +7,7 @@ import imgFlete from "../../../../public/images/flete.png"
 const satisfy = Satisfy({ subsets: ["latin"], weight: "400" });
 export default function SpecialOrders() {
   return (
-    <article className='min-h-screen'>
+    <article className='pt-[150px] min-h-screen overflow-hidden' id='special-orders'>
        <h1
         className={`${satisfy.className} text-5xl font-semibold text-[#206caf] p-4 text-center`}
       >SpecialOrders{/*  */}</h1>

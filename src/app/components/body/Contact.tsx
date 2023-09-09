@@ -3,7 +3,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdOutlineEmail } from "react-icons/md";
-
+import {FaMapMarkerAlt} from 'react-icons/fa'
 const BASE_URL = 'https://formsubmit.co/ajax/'
 const EMAIL = 'aserradero@alonso.com'
 const TEL = '123456789'
@@ -44,38 +44,51 @@ export default function Contact() {
   
 
   return (
-  <div id="contact" className="relative w-screen z-20 Contact ">
+  <div id="contact" className="relative w-screen z-0 Contact pt-20">
     
-    <section  className=" max-w-[900px] text-white bg-[rgba(47,_47,_138,_0.6)] rounded-[30px]   px-4 grid md:grid-cols-2 m-2 md:mx-auto py-20 z-20 backdrop-blur-md	mb-52 ">
+    <section  className=" max-w-[900px] text-black bg-white bg-opacity-50 border border-[#206caf] rounded-[30px]   px-4 grid md:grid-cols-2 gap-4 m-2 md:mx-auto py-20  backdrop-blur-md	mb-52 z-0 ">
+
       
-          <div className="relative z-10  ">
-          <h1 className="font-[700] text-[24px]">Get in touch</h1>
-     
+          <div className="relative z-0  ">
+          <h1 className="font-[700] text-[24px]">Contacto</h1>
+      
           <ul>
-            <i className="flex items-center gap-3 py-5">
+            <i className="flex items-center gap-3 py-5 hover:scale-110 hover:text-[#206caf] hover:pl-5">
               <BsFillTelephoneFill />
               <span>
-                <a href=""> +{TEL}</a>
+                <a href={`tel:+${TEL}`} > +{TEL}</a>
               </span>
             </i>
-            <li className="flex items-center gap-3 py-5">
+            <li className="flex items-center gap-3 py-5 hover:scale-110 hover:text-[#206caf] hover:pl-5">
               <MdOutlineEmail />
-              <a href=""> {EMAIL}</a>
+              <a href={`mailto:${EMAIL}`} > {EMAIL}</a>
             </li>
           </ul>
+         <article className="w-full ">
+         <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d421197.3940287492!2d-59.02318655107063!3d-34.43679634213419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd360eb91cc67%3A0x108e5d8a311c3888!2sAserradero%20Alonso%20S.A.!5e0!3m2!1ses-419!2smx!4v1694043510627!5m2!1ses-419!2smx"
+          //allowfullscreen
+          className="rounded-md w-full max-h-full  md:min-h-[200px]  max-w-full  md:max-w-[600px]"
+          loading="lazy"
+          //referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <p className="flex py-2"><FaMapMarkerAlt className="text-red-500 text-xl"/> Av. Hipólito Yrigoyen 13951, B1852 Burzaco, Provincia de Buenos Aires, Argentina</p>
+         </article>
           </div>
           <div className="relative ">
             
-          <h2 className="text-[23px] font-[700] pt-[25px]">
-            Send me a message
+          <h2 className="text-[20px] font-[600] pt-[25px]">
+         Tiene alguna duda o consulta? Por favor complete el formulario.
+
           </h2>
           
           <form onSubmit={handleSubmit(submit)} className="my-[10px] z-30  ">
             <input
               type="text"
               id="name"
-              placeholder="Name"
-              className="bg-[#ffffff4d] rounded-[10px] w-full p-2  placeholder-white my-[10px]"
+              placeholder="Nombre"
+              className="bg-[#ffffff4d] rounded-[10px] w-full p-2   placeholder:text-black border border-[#206caf] my-[10px] focus:bg-white focus:text-[#206caf] focus:outline-none   disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none focus:border-green-500
+              focus:invalid:border-pink-500 focus:invalid:ring-pink-500  "
               {...register("name", 
               {required: {
                 value:true,
@@ -95,8 +108,9 @@ export default function Contact() {
 /*               name="email"
  */              id="emial"
               required
-              placeholder="Email adresss "
-              className="bg-[#ffffff4d] rounded-[10px] w-full p-2  placeholder-white my-[10px]"
+              placeholder="Correo "
+              className="bg-[#ffffff4d] rounded-[10px] w-full p-2   placeholder:text-black border border-[#206caf] my-[10px] focus:bg-white focus:text-[#206caf] focus:outline-none   disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none focus:border-green-500
+              focus:invalid:border-pink-500 focus:invalid:ring-pink-500 "
               {...register("email", 
             {required: {
               value:true,
@@ -119,8 +133,9 @@ export default function Contact() {
               type="text"
 /*               name="subject"
  */              id="subject"
-              placeholder="Subject"
-              className="bg-[#ffffff4d] rounded-[10px] w-full p-2  placeholder-white m     my-[10px]"
+              placeholder="Asunto"
+              className="bg-[#ffffff4d] rounded-[10px] w-full p-2   placeholder:text-black border border-[#206caf] my-[10px] focus:bg-white focus:text-[#206caf] focus:outline-none   disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none focus:border-green-500
+              focus:invalid:border-pink-500 focus:invalid:ring-pink-500 "
               {...register("subject", 
             {required: {
               value:true,
@@ -138,8 +153,9 @@ export default function Contact() {
         ) : ''}            <textarea
 /*               name="description"
  */              id="message"
-              placeholder="Your message"
-              className="bg-[#ffffff4d] rounded-[10px] w-full h-[150px] p-2  placeholder-white py-[10px] z-40"
+              placeholder="Mensaje"
+              className="bg-[#ffffff4d] rounded-[10px] w-full p-2   placeholder:text-black border border-[#206caf] my-[10px] focus:bg-white focus:text-[#206caf] focus:outline-none   disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none focus:border-green-500
+              focus:invalid:border-pink-500 focus:invalid:ring-pink-500 "
               {...register("description", 
             {required: {
               value:true,
@@ -155,10 +171,10 @@ export default function Contact() {
             <button
               type="submit"
               value="Send message"
-              className=" block m-auto h-[50px]  px-5  bg-gradient-to-br from-[#C961DE] to-[#2954A3]   rounded-[10px] text-white text-[17px] mt-[10px] font-[400]  z-20"
+              className=" block m-auto h-[50px]  px-5 bg-[#206caf] shadow-black shadow-md  text-white border-[#206caf] border-2      rounded-[10px]  text-[17px] mt-[10px] font-[400]  z-20 transition ease-in-out delay-150 hover:scale-110" 
             >
               {" "}
-              send message{" "}
+              Enviar mensaje{" "}
             </button>
             
           </form>

@@ -8,7 +8,7 @@ import imgTables from "../../../../public/images/IMG-20230905-WA0015.jpg";
 
 export default function Products() {
   return (
-    <article className="p-4 pt-[120px] pb-[100px] grid place-content-center text-center">
+    <article className="p-4 pt-[120px] pb-[100px] grid place-content-center text-center" id="products">
       <h1
         className={`${satisfy.className} text-5xl font-semibold text-[#206caf] p-4`}
       >

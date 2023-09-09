@@ -4,25 +4,16 @@ import Products from "./components/body/Products";
 import SpecialOrders from "./components/body/SpecialOrders";
 import Contact from "./components/body/Contact";
 import History from "./components/body/History";
+import Galery from "./components/body/Galery";
 export default function Home() {
   return (
-    <main className="h-full bg-slate-300">
+    <main className="h-full  bg-slate-300 grid place-content-center overflow-hidden max-w-[100vw]">
       <Products/>
-      <SpecialOrders/>
+       <SpecialOrders/> 
       <History/>
       <Contact/>
-      <article>
-
-        <h1>Aserradero Alonso</h1>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d421197.3940287492!2d-59.02318655107063!3d-34.43679634213419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd360eb91cc67%3A0x108e5d8a311c3888!2sAserradero%20Alonso%20S.A.!5e0!3m2!1ses-419!2smx!4v1694043510627!5m2!1ses-419!2smx"
-          //allowfullscreen
-          className="rounded-md border border-green-400  h-[450px] w-[600px]"
-          loading="lazy"
-          //referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-       
-      </article>
+      <Galery/>
+      
     </main>
     /*  <main className="flex min-h-screen flex-col items-center justify-between p-24">
       

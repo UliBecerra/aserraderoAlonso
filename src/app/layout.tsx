@@ -26,7 +26,7 @@ export default function RootLayout({
           <Header/>
         </header>
         {children}
-        <footer>
+        <footer className='bg-[#206caf]'>
           <Footer/>
         </footer>
         </body>

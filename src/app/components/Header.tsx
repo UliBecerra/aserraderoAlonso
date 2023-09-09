@@ -1,34 +1,36 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Comfortaa } from "next/font/google";
-import Link from "next/link";
+import { Link } from "react-scroll"
+import * as Scroll from 'react-scroll';
 import Image from 'next/image'
 import bg from "../../../public/images/IMG-20230905-WA0009.jpg";
 //const comfortaa = Comfortaa({
 //subsets: ['latin'],
 //variable: '--font-Confortaa' })
 
+
 const comfortaa = Comfortaa({ subsets: ["latin"] });
 const links = [
   {
     label: "Productos",
-    route: "/products",
+    route: "products",
   },
   {
     label: "Pedidos especiales",
-    route: "/special-orders",
+    route: "special-orders",
   },
   {
     label: "Historia",
-    route: "/history",
+    route: "history",
   },
   {
     label: "Contacto",
-    route: "/contact",
+    route: "contact",
   },
 ];
 export default function Header() {
-
+const [modalNav, setModalNav] = useState(false)
 const [scroll, setScroll] = useState(true)
 useEffect(() => {
   
@@ -50,10 +52,10 @@ useEffect(() => {
   `h-1 w-6 my-1 rounded-full bg-black transition ease transform duration-300`;
   //IMG-20230905-WA0009
   return (
-    <article >
+    <article className="max-w-[100vw] " id="header">
       <div
       
-        className={`min-h-[calc(100vh_-_80px)] min-w-screen bg-cover  bg-center bg-opacity-70 z-20 relative`}
+        className={`min-h-[calc(100vh_-_80px)] min-w-screen  bg-cover  bg-center bg-opacity-70 z-20 relative`}
       
       >
         <Image
@@ -61,7 +63,7 @@ useEffect(() => {
           fill={true}
           layout="fill"
           objectFit="cover"
-          className="opacity-80"
+          className="opacity-70"
           alt="Background image "
           priority={true}
           
@@ -75,11 +77,21 @@ useEffect(() => {
             </button>
         </div>
       </div>
-      <div className={`${!scroll ? 'fixed top-0 w-full' : 'block'}  z-20 grid grid-cols-2 bg-slate-50 text-center text-3xl text-[#5f9bce]  py-4 duration-500 `}>
-        <div className="flex items-center ">
+      <div className={`${!scroll ? 'fixed top-0 ' : 'block'} w-full z-20 grid md:grid-cols-2 bg-slate-50 text-center  text-[#5f9bce]  py-4 duration-500  `}>
+        <div className="flex w-full  items-center justify-around ">
+         
+          <Link to='header'
+            className={`block ${comfortaa.className} text-xl md:text-3xl hover:text-[gray] drop-shadow-lg cursor-pointer`}
+           smooth={true}>
+            {" "}
+            Aserradero Alonso S.A.{" "}
+          </Link>
           <button
-            className="flex flex-col h-12 w-12   rounded justify-center items-center group hover:text-[gray]"
-            onClick={() => setIsOpen(!isOpen)}
+            className="flex flex-col h-12 w-12   rounded justify-center items-center group hover:text-[gray] md:hidden"
+            onClick={() => {
+              setIsOpen(!isOpen)
+              setModalNav(!modalNav)
+            }}
           >
             <div
               className={`${genericHamburgerLine} ${
@@ -102,27 +114,17 @@ useEffect(() => {
               }`}
             />
           </button>
-          <h1
-            className={`${comfortaa.className} hover:text-[gray] drop-shadow-lg cursor-pointer`}
-          >
-            {" "}
-            Aserradero Alonso S.A.{" "}
-          </h1>
         </div>
 
-        {/* 
-        <ul className=" flex gap-6 text-xl justify-end items-center drop-shadow pr-4">
-          <li className="hover:text-[gray] cursor-pointer"></li>
-          <li className="hover:text-[gray] cursor-pointer">Pedidos especiales</li>
-          <li className="hover:text-[gray] cursor-pointer">Historia</li>
-          <li className="hover:text-[gray] cursor-pointer">Contacto</li>
-        </ul> */}
-        <ul className=" flex gap-6 text-xl justify-end items-center drop-shadow pr-4">
+        
+        <ul className={`${modalNav ? 'py-4 h-auto' : ' h-0'}  md:flex gap-6 text-xl justify-end items-center drop-shadow pr-4 transition-all duration-300`}>
+
           {links.map(({ label, route }) => (
             <Link
-              className="hover:text-[gray] cursor-pointer"
-              href={route}
+              className={`${modalNav ? '': 'hidden'} hover:text-[gray] transition-all cursor-pointer `}
+              to={route}
               key={route}
+              smooth= {true}
             >
               <li>{label}</li>
             </Link>
