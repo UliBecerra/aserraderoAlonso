@@ -4,6 +4,7 @@ import { Satisfy } from "next/font/google";
 import Image from "next/image";
 const satisfy = Satisfy({ subsets: ["latin"], weight: "400" });
 import imgTables from "../../../../public/images/IMG-20230905-WA0015.jpg";
+import { Link } from "react-scroll";
 //import imgTables from "../../../../public/images/IMG-20230905-WA0009.jpg";
 
 export default function Products() {
@@ -52,10 +53,10 @@ export default function Products() {
               <span>Sin cepillado</span>
             </li>
           </ul>
-          <button className=" p-3 m-auto rounded-xl hover:opacity-2 text-white transition ease-in-out delay-150 bg-[#206caf] hover:-translate-y-1 hover:scale-110 hover:bg-white hover:text-[#206caf] hover:border hover:border-[#206caf] duration-300">
+          <Link to={'contact'} smooth={true} className=" p-3 m-auto rounded-xl hover:opacity-2 text-white transition ease-in-out delay-150 bg-[#206caf] hover:-translate-y-1 hover:scale-110 hover:bg-white hover:text-[#206caf] hover:border hover:border-[#206caf] duration-300">
             {" "}
             Conoce mas{" "}
-          </button>
+          </Link>
         </article>
       </ul>
     </article>

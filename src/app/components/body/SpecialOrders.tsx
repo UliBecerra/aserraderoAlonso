@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import { Satisfy } from "next/font/google";
 import Image from "next/image";
@@ -5,6 +6,8 @@ import imgTacos from "../../../../public/images/tacos.jpeg"
 import imgCepillado from "../../../../public/images/cepilloparamadera.jpg"
 import imgFlete from "../../../../public/images/flete.png"
 const satisfy = Satisfy({ subsets: ["latin"], weight: "400" });
+import { Link } from "react-scroll"
+
 export default function SpecialOrders() {
   return (
     <article className='pt-[150px] min-h-screen overflow-hidden' id='special-orders'>
@@ -25,10 +28,10 @@ export default function SpecialOrders() {
                
           </div>
          
-          <button className=" p-3 m-auto rounded-xl  hover:text-white transition ease-in-out delay-150 hover:bg-[#206caf] hover:-translate-y-1 hover:scale-110 bg-white text-[#206caf] border border-white duration-300">
+          <Link to={'contact'} smooth={true} className=" p-3 m-auto rounded-xl  hover:text-white transition ease-in-out delay-150 hover:bg-[#206caf] hover:-translate-y-1 hover:scale-110 bg-white text-[#206caf] border border-white duration-300">
             {" "}
             Conoce mas{" "}
-          </button>
+          </Link>
         </article>
         <article className=" bg-[#206caf] text-white p-4 grid gap-3 place-content-center max-w-[350px] rounded-xl">
           <h2 className="text-white font-bold">Tacos</h2>
@@ -43,10 +46,10 @@ export default function SpecialOrders() {
                
           </div>
          
-          <button className=" p-3 m-auto rounded-xl  hover:text-white transition ease-in-out delay-150 hover:bg-[#206caf] hover:-translate-y-1 hover:scale-110 bg-white text-[#206caf] border border-white duration-300">
+          <Link to={'contact'} smooth={true} className=" p-3 m-auto rounded-xl  hover:text-white transition ease-in-out delay-150 hover:bg-[#206caf] hover:-translate-y-1 hover:scale-110 bg-white text-[#206caf] border border-white duration-300">
             {" "}
             Conoce mas{" "}
-          </button>
+          </Link>
         </article>
         <article className=" bg-[#206caf] text-white p-4 grid gap-3 place-content-center max-w-[350px] rounded-xl">
           <h2 className="text-white font-bold ">Fletes</h2>
@@ -61,10 +64,10 @@ export default function SpecialOrders() {
                
           </div>
          
-          <button className=" p-3 m-auto rounded-xl  hover:text-white transition ease-in-out delay-150 hover:bg-[#206caf] hover:-translate-y-1 hover:scale-110 bg-white text-[#206caf] border border-white duration-300">
+          <Link to={'contact'} smooth={true} className=" p-3 m-auto rounded-xl  hover:text-white transition ease-in-out delay-150 hover:bg-[#206caf] hover:-translate-y-1 hover:scale-110 bg-white text-[#206caf] border border-white duration-300">
             {" "}
             Conoce mas{" "}
-          </button>
+          </Link>
         </article>
       </ul>
       </article>
