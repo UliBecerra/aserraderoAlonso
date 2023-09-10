@@ -4,7 +4,7 @@ import { Comfortaa } from "next/font/google";
 import { Link } from "react-scroll"
 import * as Scroll from 'react-scroll';
 import Image from 'next/image'
-import bg from "../../../public/images/IMG-20230905-WA0009.jpg";
+import bg from "../../../public/images/IMG-20230905-WA0003.jpg";
 //const comfortaa = Comfortaa({
 //subsets: ['latin'],
 //variable: '--font-Confortaa' })
@@ -59,7 +59,7 @@ useEffect(() => {
       
       >
         <Image
-          src={'/images/IMG-20230905-WA0009.jpg'}
+          src={'/images/IMG-20230905-WA0003.jpg'}
           fill={true}
           layout="fill"
           objectFit="cover"
@@ -72,7 +72,7 @@ useEffect(() => {
         <h2 className=" text-white z-10 font-bold text-3xl shadow-md ">
         {`"La calidad que corta a la competencia"`}
         </h2>
-        <Link to={'contact'} className="bg-[#5f9bce] p-4 font-semibold block m-auto rounded-xl cursor-pointer hover:bg-[#206caf] transition ease-in-out delay-150 hover:scale-110 " >
+        <Link to={'contact'} smooth={true} className="bg-[#5f9bce] p-4 font-semibold block m-auto rounded-xl cursor-pointer hover:bg-[#206caf] transition ease-in-out delay-150 hover:scale-110 " >
               OBTENER PRESUPUESTO
             </Link>
         </div>
@@ -117,11 +117,11 @@ useEffect(() => {
         </div>
 
         
-        <ul className={`${modalNav ? 'py-4 h-auto' : ' h-0'}  md:flex gap-6 text-xl justify-end items-center drop-shadow pr-4 transition-all duration-300`}>
+        <ul className={`${modalNav ? 'py-4 h-auto' : ' h-0 md:h-auto'} flex  md:flex gap-6 text-xl justify-end items-center drop-shadow pr-4 transition-all duration-300`}>
 
           {links.map(({ label, route }) => (
             <Link
-              className={`${modalNav ? '': 'hidden'} hover:text-[gray] transition-all cursor-pointer `}
+              className={`${modalNav ? '': 'hidden md:flex'} block hover:text-[gray] transition-all cursor-pointer `}
               to={route}
               key={route}
               smooth= {true}
