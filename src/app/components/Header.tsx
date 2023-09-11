@@ -30,8 +30,8 @@ const links = [
   },
 ];
 export default function Header() {
-const [modalNav, setModalNav] = useState(false)
 const [scroll, setScroll] = useState(true)
+const [modalNav, setModalNav] = useState(false)
 useEffect(() => {
   
   
@@ -53,9 +53,10 @@ useEffect(() => {
   //IMG-20230905-WA0009
   return (
     <article className="max-w-[100vw] " id="header">
+      
       <div
       
-        className={`min-h-[calc(100vh_-_80px)] min-w-screen  bg-cover  bg-center bg-opacity-70 z-20 relative`}
+        className={`min-h-[calc(100vh_-_88px)] min-w-screen  bg-cover  bg-center bg-opacity-70 z-20 relative`}
       
       >
         <Image

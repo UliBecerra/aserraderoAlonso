@@ -5,9 +5,11 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdOutlineEmail } from "react-icons/md";
 import {FaMapMarkerAlt} from 'react-icons/fa'
 const BASE_URL = 'https://formsubmit.co/ajax/'
-const EMAIL = 'aserradero@alonso.com'
+const EMAIL = 'tomasalonsogg@gmail.com'
 const TEL = '1154049512'
 const TEL2 = '1154049512'
+import {BiCheckCircle} from 'react-icons/bi'
+import {useState} from 'react'
 interface FormData {
   username: string;
   name: string
@@ -20,15 +22,18 @@ interface FormData {
 
 export default function Contact() {
   const { register, handleSubmit, reset, formState } = useForm<FormData>();
+  const [showModal, setShowModal] = useState(false)
+  const [submitModal, setSubmitModal] = useState(true)
 
   const defaultValues = {
     name: '',
      email: '',
     subject: '',
-    message: '', 
+    description: '', 
     
   }
   const submit = (data: any) => {
+    setSubmitModal(submitModal => false)
     postForm(data); 
     reset(defaultValues);
   }
@@ -38,7 +43,10 @@ export default function Contact() {
     axios.defaults.headers.post['Content-Type'] = 'application/json';
     axios
       .post(URL, data)
-      .then((res) => console.log(res))
+      .then((res) => {
+        setShowModal(showModal => true)
+        setSubmitModal(submitModal => true)
+      } )
       .catch((err) => console.log(err));
    
       };
@@ -46,7 +54,12 @@ export default function Contact() {
 
   return (
   <div id="contact" className="relative w-screen z-0 Contact pt-20">
-    
+    <div className={` ${showModal ? 'grid opacity-100' : 'hidden opacity-0'} fixed top-1/2 left-1/2 z-50 modal shadow-white shadow-sm -translate-x-1/2 -translate-y-1/2 transition-all text-white p-6  bg-[#206caf] rounded-lg grid place-content-center text-center gap-1 transition ease-in-out delay-150`}>
+        <BiCheckCircle className="text-white text-7xl text-center m-auto  "/>
+        <h2 className="font-semibold text-xl">Formulario enviado</h2>
+        <h3 className="opacity-70">En breve con comunicamos con usted</h3>
+        <button className="bg-white text-[#206caf]  m-auto  p-1 px-3 rounded-lg mt-3 transition ease-in-out delay-150 hover:scale-110 " onClick={() => (setShowModal (showModal => false))} >Aceptar</button>
+      </div>
     <section  className=" max-w-[900px] text-black bg-white bg-opacity-50 border border-[#206caf] rounded-[30px]   px-4 grid md:grid-cols-2 gap-4 m-2 md:mx-auto py-20  backdrop-blur-md	mb-52 z-0 ">
 
       
@@ -178,7 +191,8 @@ export default function Contact() {
             <button
               type="submit"
               value="Send message"
-              className=" block m-auto h-[50px]  px-5 bg-[#206caf] shadow-black shadow-md  text-white border-[#206caf] border-2      rounded-[10px]  text-[17px] mt-[10px] font-[400]  z-20 transition ease-in-out delay-150 hover:scale-110" 
+              className={` ${submitModal ? 'block' : 'hidden'} cursor-disabled  block m-auto h-[50px]  px-5 bg-[#206caf] shadow-black shadow-md  text-white border-[#206caf] border-2      rounded-[10px]  text-[17px] mt-[10px] font-[400]  z-20 transition ease-in-out delay-150 hover:scale-110` } 
+              
             >
               {" "}
               Enviar mensaje{" "}

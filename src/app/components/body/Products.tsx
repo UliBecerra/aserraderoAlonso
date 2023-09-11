@@ -53,7 +53,7 @@ export default function Products() {
               <span>Sin cepillado</span>
             </li>
           </ul>
-          <Link to={'contact'} smooth={true} className=" p-3 m-auto rounded-xl hover:opacity-2 text-white transition ease-in-out delay-150 bg-[#206caf] hover:-translate-y-1 hover:scale-110 hover:bg-white hover:text-[#206caf] hover:border hover:border-[#206caf] duration-300">
+          <Link to={'contact'} smooth={true} className="  p-3 m-auto rounded-xl hover:opacity-2 text-white transition ease-in-out delay-150 bg-[#206caf] hover:-translate-y-1 hover:scale-110 hover:bg-white hover:text-[#206caf] hover:border hover:border-[#206caf] duration-300">
             {" "}
             Conoce mas{" "}
           </Link>

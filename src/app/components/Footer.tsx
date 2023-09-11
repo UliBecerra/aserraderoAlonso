@@ -1,6 +1,6 @@
 "use client"
 import {useState} from 'react';
-const email = 'Aserradero Alonso'
+const email = 'tomasalonsogg@gmail.com'
 const tels = ['1154049512', 1163523217]
 export default function App() {
  
