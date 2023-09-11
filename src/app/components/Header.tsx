@@ -4,7 +4,7 @@ import { Comfortaa } from "next/font/google";
 import { Link } from "react-scroll"
 import * as Scroll from 'react-scroll';
 import Image from 'next/image'
-import bg from "../../../public/images/IMG-20230905-WA0003.jpg";
+import bg from "../../../public/images/IMG-20230905-WA0009.jpg";
 //const comfortaa = Comfortaa({
 //subsets: ['latin'],
 //variable: '--font-Confortaa' })
@@ -59,7 +59,7 @@ useEffect(() => {
       
       >
         <Image
-          src={'/images/IMG-20230905-WA0003.jpg'}
+          src={'/images/IMG-20230905-WA0009.jpg'}
           fill={true}
           layout="fill"
           objectFit="cover"

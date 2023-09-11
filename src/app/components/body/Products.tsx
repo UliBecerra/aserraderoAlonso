@@ -3,7 +3,7 @@ import React from "react";
 import { Satisfy } from "next/font/google";
 import Image from "next/image";
 const satisfy = Satisfy({ subsets: ["latin"], weight: "400" });
-import imgTables from "../../../../public/images/IMG-20230905-WA0015.jpg";
+import imgTables from "../../../../public/images/tablasAlamo.jpg";
 import { Link } from "react-scroll";
 //import imgTables from "../../../../public/images/IMG-20230905-WA0009.jpg";
 

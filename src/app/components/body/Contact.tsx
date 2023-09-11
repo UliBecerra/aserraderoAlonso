@@ -6,7 +6,8 @@ import { MdOutlineEmail } from "react-icons/md";
 import {FaMapMarkerAlt} from 'react-icons/fa'
 const BASE_URL = 'https://formsubmit.co/ajax/'
 const EMAIL = 'aserradero@alonso.com'
-const TEL = '123456789'
+const TEL = '1154049512'
+const TEL2 = '1154049512'
 interface FormData {
   username: string;
   name: string
@@ -53,10 +54,16 @@ export default function Contact() {
           <h1 className="font-[700] text-[24px]">Contacto</h1>
       
           <ul>
-            <i className="flex items-center gap-3 py-5 hover:scale-110 hover:text-[#206caf] hover:pl-5">
+            <i className="flex items-center gap-3 pt-5 hover:scale-110 hover:text-[#206caf] hover:pl-5">
               <BsFillTelephoneFill />
               <span>
                 <a href={`tel:+${TEL}`} > +{TEL}</a>
+              </span>
+            </i>
+            <i className="flex items-center gap-3 py-5 hover:scale-110 hover:text-[#206caf] hover:pl-5">
+              <BsFillTelephoneFill />
+              <span>
+                <a href={`tel:+${TEL2}`} > +{TEL2}</a>
               </span>
             </i>
             <li className="flex items-center gap-3 py-5 hover:scale-110 hover:text-[#206caf] hover:pl-5">
@@ -66,13 +73,13 @@ export default function Contact() {
           </ul>
          <article className="w-full ">
          <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d421197.3940287492!2d-59.02318655107063!3d-34.43679634213419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd360eb91cc67%3A0x108e5d8a311c3888!2sAserradero%20Alonso%20S.A.!5e0!3m2!1ses-419!2smx!4v1694043510627!5m2!1ses-419!2smx"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.432194901502!2d-58.99106979999999!3d-34.05843350000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bb0d91bb37bab1%3A0x3f4014618ab6cc9f!2sAserradero%20Alonso!5e0!3m2!1ses-419!2sar!4v1694405024854!5m2!1ses-419!2sar"
           //allowfullscreen
           className="rounded-md w-full max-h-full  md:min-h-[200px]  max-w-full  md:max-w-[600px]"
           loading="lazy"
           //referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
-        <p className="flex py-2"><FaMapMarkerAlt className="text-red-500 text-xl"/> Av. Hipólito Yrigoyen 13951, B1852 Burzaco, Provincia de Buenos Aires, Argentina</p>
+        <p className="flex py-2"><FaMapMarkerAlt className="text-red-500 text-xl"/> Campana, Provincia de Buenos Aires</p>
          </article>
           </div>
           <div className="relative ">
